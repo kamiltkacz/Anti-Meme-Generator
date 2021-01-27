@@ -11,7 +11,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-var element = React.createElement('h1', { className: 'greeting' }, 'Hello, Kam, welcome to your first app!');
+let element = React.createElement('h1', { className: 'greeting' }, 'Hello, Kam, welcome to your first app!');
 ReactDOM.render(element, document.getElementById('root'));
 
 
