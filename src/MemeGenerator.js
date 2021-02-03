@@ -9,7 +9,7 @@ class MemeGenerator extends Component {
             randomImg: "http://i.imgflip.com/1bij.jpg",
             allMemeImgs: [],
             notFunnyText: "Your meme is not funny",
-            funnyText: "Hi, Let's see if your meme is funny"
+            funnyText: "Hi, type something to see if your meme is funny"
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
