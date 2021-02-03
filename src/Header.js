@@ -7,7 +7,7 @@ function Header() {
                 src="http://www.pngall.com/wp-content/uploads/2016/05/Trollface.png"
                 alt="Problem?"
             />
-            <p>Judge Meme Generator</p>
+            <p>Judge (Me)me Generator</p>
         </header>
 
     )
