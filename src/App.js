@@ -2,6 +2,7 @@
 import './App.css';
 import Header from './Header.js';
 import MemeGenerator from './MemeGenerator';
+import Logo from './haroldsmile.jpg';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Header />
         <MemeGenerator />
       </header>
+      <Logo />
     </div>
   );
 }
