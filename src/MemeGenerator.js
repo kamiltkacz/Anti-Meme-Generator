@@ -10,6 +10,7 @@ class MemeGenerator extends Component {
             allMemeImgs: [],
             notFunnyText: "Your meme is not funny",
             funnyText: "Hi, type something to see if your meme is funny"
+
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -45,6 +46,7 @@ class MemeGenerator extends Component {
 
     render() {
         const isFunny =  this.state.bottomText + this.state.bottomText;
+
         return (
             <div>
                 <form className="meme-form" onSubmit={this.handleSubmit}>
@@ -71,7 +73,7 @@ class MemeGenerator extends Component {
                     <h2 className="bottom">{this.state.bottomText}</h2>
                 </div>
 
-                <h2> {isFunny ? this.state.notFunnyText  : this.state.funnyText}</h2>
+                <h2> {isFunny ? this.state.notFunnyText : this.state.funnyText}</h2>
 
 
             </div>
