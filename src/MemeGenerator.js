@@ -1,5 +1,7 @@
 import React, {Component} from "react";
- import logo from './haroldsmile.jpg';
+import smileLogo from './haroldSmile.jpg';
+import notSmileLogo from './haroldNotFunny.jpg';
+
 
 class MemeGenerator extends Component {
     constructor() {
@@ -9,18 +11,26 @@ class MemeGenerator extends Component {
             bottomText: "",
             randomImg: "http://i.imgflip.com/1bij.jpg",
             allMemeImgs: [],
-            notFunnyText: "Your meme is not funny",
             funnyText: "Hi, type something to see if your meme is funny",
-            tryText: ""
+            showMessage: false
+
+
 
 
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleEvaluate = this.handleEvaluate.bind(this)
+        this.handleCheck = this.handleCheck.bind(this)
 
 
     }
+
+    showMessage = (bool) => {
+        this.setState({
+          showMessage: bool
+        });
+      }
+
 
     componentDidMount() {
         fetch("https://api.imgflip.com/get_memes")
@@ -33,8 +43,8 @@ class MemeGenerator extends Component {
 
     handleChange(event) {
         const {name, value} = event.target
-
         this.setState({ [name]: value })
+
 
     }
 
@@ -47,7 +57,8 @@ class MemeGenerator extends Component {
         this.setState({ randomImg: randMemeImg })
         this.setState({
             bottomText: "",
-            topText:""
+            topText:"",
+            funnyText: ""
 
         })
 
@@ -55,43 +66,28 @@ class MemeGenerator extends Component {
 
     }
 
-
-    handleEvaluate(event) {
+    handleCheck(event) {
         event.preventDefault()
-        const isFunny = (this.state.topText + this.state.bottomText);
+       const isFunny = (this.state.topText + this.state.bottomText);
+       if (isFunny) {
 
-        if (isFunny) {
-
-            this.setState({
-                funnyText: "Your meme stinks",
-
-
-            })
-
-
-         } else {
         this.setState({
-            funnyText: "Finish Your meme",
+            funnyText: "Your meme stinks",
+          // harold_serious here goes your condition
 
         })
 
-                }
 
+        } else {
+       this.setState({
+           funnyText: "Finish Your meme",
 
-
-
+    })
 
     }
 
 
-
-
-
-
-
-
-
-
+    }
 
 
 
@@ -120,19 +116,23 @@ class MemeGenerator extends Component {
                     <button>Next</button>
                 </form>
                 <div className="meme">
+
+                <img src={notSmileLogo} id="harold_serious" alt="harold serious" width="20%" height="20%" />
                     <img src={this.state.randomImg} alt="" />
+                    <img src={smileLogo} id="harold_smile" alt="harold smiles" width="20%" height="20%" />
                     <h2 className="top">{this.state.topText}</h2>
                     <h2 className="bottom">{this.state.bottomText}</h2>
-
                 </div>
 
-                <h2>{this.state.funnyText} </h2>
+                <p>{this.state.funnyText} </p>
+                <button className="evBtn" name="checkBtn" onClick={this.handleCheck}>Check</button>
+        <button onClick={this.showMessage.bind(null, true)}>show</button>
+        <button onClick={this.showMessage.bind(null, false)}>hide</button>
+        { this.state.showMessage && (<div>hello world!</div>) }
 
-
-                <img src={logo} alt="" width="50%" height="30%" />
-                <button className="evBtn" onClick={this.handleEvaluate}>Evaluate</button>
 
             </div>
+
         )
     }
 }
