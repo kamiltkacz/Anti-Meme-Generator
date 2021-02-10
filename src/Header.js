@@ -1,16 +1,44 @@
-import React from "react"
+import React, {Component} from "react";
+import logo from './haroldFirst.jpg';
 
-function Header() {
+
+class Header extends Component {
+    constructor() {
+        super()
+        this.state ={
+
+
+            funnyText: "",
+
+
+
+        }
+
+
+
+    }
+
+
+
+
+   render() {
+
     return (
+
         <header>
-            <img
-                src="http://www.pngall.com/wp-content/uploads/2016/05/Trollface.png"
-                alt="Problem?"
-            />
-            <p>Judge (Me)me Generator</p>
+
+            <img src={logo} alt="harold greets" width="20%" height="30%" />
+
+            <p>Harold's Meme Evaluator</p>
+
         </header>
 
-    )
-}
 
+    )
+
+
+   }
+
+
+}
 export default Header
