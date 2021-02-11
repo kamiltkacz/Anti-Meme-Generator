@@ -152,6 +152,7 @@ text-align: cen
 
   margin-right: 41px;
   border-radius: 50%;
+ /* display: none;*/
 }
 
 
@@ -160,4 +161,5 @@ text-align: cen
   margin-left: 50px;
   border-radius: 50%;
   margin-bottom: 100px;
+ /* display: none; */
 }
