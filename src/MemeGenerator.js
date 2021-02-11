@@ -12,7 +12,11 @@ class MemeGenerator extends Component {
             randomImg: "http://i.imgflip.com/1bij.jpg",
             allMemeImgs: [],
             funnyText: "Hi, type something to see if your meme is funny",
-            showMessage: false
+            showHaroldSerious: false,
+            showHaroldSmile: false,
+            notSmileLogo: "",
+            smileLogo: "",
+            checkBtn: true
 
 
 
@@ -20,16 +24,33 @@ class MemeGenerator extends Component {
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleCheck = this.handleCheck.bind(this)
+       // this.handleCheck = this.handleCheck.bind(this)
+      // this.checkMe = this.checkMe.bind(this)
 
 
     }
 
-    showMessage = (bool) => {
+    showHaroldSerious = (bool) => {
+
         this.setState({
-          showMessage: bool
+          showHaroldSerious: bool
         });
       }
+
+      showHaroldSmile = () => {
+
+        this.setState({
+          showHaroldSmile: true
+        });
+      }
+
+    checkMe = () => {
+
+        this.setState({
+          checkBtn: false
+        });
+      }
+
 
 
     componentDidMount() {
@@ -62,38 +83,37 @@ class MemeGenerator extends Component {
 
         })
 
-
-
     }
 
-    handleCheck(event) {
-        event.preventDefault()
-       const isFunny = (this.state.topText + this.state.bottomText);
-       if (isFunny) {
-
-        this.setState({
-            funnyText: "Your meme stinks",
-          // harold_serious here goes your condition
-
-        })
+    // handleCheck(event) {
+    //     event.preventDefault()
 
 
-        } else {
-       this.setState({
-           funnyText: "Finish Your meme",
 
-    })
-
-    }
+    // // isFunny ?  this.showMessage.bind(null, true) : this.showMessage.bind(null, false)
 
 
-    }
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
     render() {
 
-
+       // const isFunny = (this.state.topText + this.state.bottomText);
 
         return (
             <div>
@@ -117,18 +137,50 @@ class MemeGenerator extends Component {
                 </form>
                 <div className="meme">
 
-                <img src={notSmileLogo} id="harold_serious" alt="harold serious" width="20%" height="20%" />
+
                     <img src={this.state.randomImg} alt="" />
-                    <img src={smileLogo} id="harold_smile" alt="harold smiles" width="20%" height="20%" />
+
+
+
+
+
+
+
+
+
                     <h2 className="top">{this.state.topText}</h2>
                     <h2 className="bottom">{this.state.bottomText}</h2>
                 </div>
 
                 <p>{this.state.funnyText} </p>
-                <button className="evBtn" name="checkBtn" onClick={this.handleCheck}>Check</button>
-        <button onClick={this.showMessage.bind(null, true)}>show</button>
-        <button onClick={this.showMessage.bind(null, false)}>hide</button>
-        { this.state.showMessage && (<div>hello world!</div>) }
+                {/* <button className="evBtn" name="checkBtn">Check</button> */}
+
+        <button id="checkBtn" onClick={this.showHaroldSerious.bind(null,true)}>Check</button>
+        {this.state.showHaroldSerious && (
+
+        <img src={notSmileLogo} id="harold_serious" alt="harold serious" width="20%" height="20%" />
+
+        )  }
+
+        {this.state.showHaroldSmile&& (
+            <img src={smileLogo} id="harold_smile" alt="harold smiles" width="20%" height="20%" />
+
+        )}
+
+       <button onClick={this.showHaroldSmile.bind(null,true)}>Honest</button>
+
+       {
+           this.state.showHaroldSmile ? <img src={notSmileLogo} id="harold_serious" alt="harold serious" width="20%" height="20%" style={{display: 'none'}}/> :
+
+           <img src={notSmileLogo} id="harold_serious" alt="harold serious" width="20%" height="20%" style={{display: 'block'}}/>
+       }
+
+
+
+
+
+
+
 
 
             </div>
