@@ -11,12 +11,13 @@ class MemeGenerator extends Component {
             bottomText: "",
             randomImg: "http://i.imgflip.com/1bij.jpg",
             allMemeImgs: [],
-            funnyText: "Hi, type something to see if your meme is funny",
+            funnyText: "Hi, type something to check Harold's reaction",
             showHaroldSerious: false,
             showHaroldSmile: false,
-            notSmileLogo: "",
-            smileLogo: "",
-            checkBtn: true
+            memeStinks: "See Harold's reaction"
+           // notSmileLogo: "",
+          //  smileLogo: "",
+           // checkBtn: true
 
 
 
@@ -25,7 +26,7 @@ class MemeGenerator extends Component {
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
        // this.handleCheck = this.handleCheck.bind(this)
-      // this.checkMe = this.checkMe.bind(this)
+     //  this.hideAll = this.hideAll.bind(this)
 
 
     }
@@ -35,21 +36,24 @@ class MemeGenerator extends Component {
         this.setState({
           showHaroldSerious: bool
         });
+
+
       }
 
-      showHaroldSmile = () => {
+      showHaroldSmile = (bool) => {
 
         this.setState({
-          showHaroldSmile: true
+          showHaroldSmile: bool
         });
+
       }
 
-    checkMe = () => {
+    // checkMe = () => {
 
-        this.setState({
-          checkBtn: false
-        });
-      }
+    //     this.setState({
+    //       checkBtn: false
+    //     });
+    //   }
 
 
 
@@ -85,12 +89,19 @@ class MemeGenerator extends Component {
 
     }
 
-    // handleCheck(event) {
-    //     event.preventDefault()
+    // hideAll() {
 
 
 
-    // // isFunny ?  this.showMessage.bind(null, true) : this.showMessage.bind(null, false)
+
+
+
+
+    //     this.showHaroldSerious.bind(null,false) + this.showHaroldSmile.bind(null,false);
+
+
+
+
 
 
     // }
@@ -113,7 +124,10 @@ class MemeGenerator extends Component {
 
     render() {
 
-       // const isFunny = (this.state.topText + this.state.bottomText);
+       const isFunny = (this.state.topText && this.state.bottomText);
+
+
+
 
         return (
             <div>
@@ -152,30 +166,39 @@ class MemeGenerator extends Component {
                     <h2 className="bottom">{this.state.bottomText}</h2>
                 </div>
 
-                <p>{this.state.funnyText} </p>
-                {/* <button className="evBtn" name="checkBtn">Check</button> */}
+                <p> {
+
+                  isFunny ? this.state.memeStinks : this.state.funnyText
+                  }
+                  </p>
+
 
         <button id="checkBtn" onClick={this.showHaroldSerious.bind(null,true)}>Check</button>
-        {this.state.showHaroldSerious && (
+        <button onClick={this.showHaroldSerious.bind(null,false)}>HideCheck</button>
+        <button onClick={this.showHaroldSmile.bind(null,true)}>Check again</button>
+        <button onClick={this.showHaroldSmile.bind(null,false)}>HideCheckagain</button>
 
-        <img src={notSmileLogo} id="harold_serious" alt="harold serious" width="20%" height="20%" />
 
-        )  }
+        {this.state.showHaroldSerious}
 
-        {this.state.showHaroldSmile&& (
-            <img src={smileLogo} id="harold_smile" alt="harold smiles" width="20%" height="20%" />
+        {this.state.showHaroldSmile}
 
-        )}
 
-       <button onClick={this.showHaroldSmile.bind(null,true)}>Honest</button>
 
-       {
-           this.state.showHaroldSmile ? <img src={notSmileLogo} id="harold_serious" alt="harold serious" width="20%" height="20%" style={{display: 'none'}}/> :
 
-           <img src={notSmileLogo} id="harold_serious" alt="harold serious" width="20%" height="20%" style={{display: 'block'}}/>
+        {
+           this.state.showHaroldSerious ? <img src={smileLogo} id="harold_smile" alt="harold smiles" width="20%" height="20%" style={{display: 'block'}}  /> :
+
+           <img src={notSmileLogo} id="harold_serious" alt="harold serious" width="20%" height="20%" style={{display: 'none'}} />
+
        }
 
 
+         {
+            this.state.showHaroldSmile ? <img src={notSmileLogo} id="harold_serious" alt="harold serious" width="20%" height="20%" style={{display: 'block'}}/> :
+
+            <img src={smileLogo} id="harold_smile" alt="harold smiles" width="20%" height="20%" style={{display: 'none'}}/>
+        }
 
 
 
