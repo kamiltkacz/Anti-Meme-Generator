@@ -150,16 +150,20 @@ text-align: cen
 
 #harold_serious {
 
-  margin-right: 41px;
-  border-radius: 50%;
- /* display: none;*/
+  margin-left: 230px;
+    border-radius: 50%;
+    /* margin-bottom: 100px; */
+    display: none;
+    padding: 10px;
+
 }
 
 
 #harold_smile {
 
-  margin-left: 50px;
-  border-radius: 50%;
-  margin-bottom: 100px;
- /* display: none; */
+  margin-left: 400px;
+    border-radius: 50%;
+    /* margin-bottom: 100px; */
+    display: none;
+    padding: 10px;
 }
