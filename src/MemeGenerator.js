@@ -14,11 +14,8 @@ class MemeGenerator extends Component {
             funnyText: "Hi, type something to check Harold's reaction",
             showHaroldSerious: false,
             showHaroldSmile: false,
-            memeStinks: "See Harold's reaction"
-           // notSmileLogo: "",
-          //  smileLogo: "",
-           // checkBtn: true
-
+            seeHarReact: "Create the meme and see Harold's reaction",
+            memeStinks: " Your meme is foul"
 
 
 
@@ -31,22 +28,22 @@ class MemeGenerator extends Component {
 
     }
 
-    showHaroldSerious = (bool) => {
+    // showHaroldSerious = (bool) => {
 
-        this.setState({
-          showHaroldSerious: bool
-        });
+    //     this.setState({
+    //       showHaroldSerious: bool
+    //     });
 
 
-      }
+    //   }
 
-      showHaroldSmile = (bool) => {
+    //   showHaroldSmile = (bool) => {
 
-        this.setState({
-          showHaroldSmile: bool
-        });
+    //     this.setState({
+    //       showHaroldSmile: bool
+    //     });
 
-      }
+    //   }
 
     // checkMe = () => {
 
@@ -89,44 +86,10 @@ class MemeGenerator extends Component {
 
     }
 
-    // hideAll() {
-
-
-
-
-
-
-
-    //     this.showHaroldSerious.bind(null,false) + this.showHaroldSmile.bind(null,false);
-
-
-
-
-
-
-    // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     render() {
 
        const isFunny = (this.state.topText && this.state.bottomText);
-
-
 
 
         return (
@@ -154,39 +117,30 @@ class MemeGenerator extends Component {
 
                     <img src={this.state.randomImg} alt="" />
 
-
-
-
-
-
-
-
-
                     <h2 className="top">{this.state.topText}</h2>
                     <h2 className="bottom">{this.state.bottomText}</h2>
                 </div>
 
-                <p> {
+                   <p>
+                { isFunny ?  this.state.memeStinks  :  this.state.seeHarReact }
 
-                  isFunny ? this.state.memeStinks : this.state.funnyText
-                  }
                   </p>
+                  <div id="smileHarold" hidden={this.state.bottomText} >
+                   <img src={smileLogo} id="harold_smile" alt="harold smiles" width="20%" height="20%" />
+                   </div>
+                   <div id="seriousHarold" hidden={!this.state.topText + !this.state.bottomText}>
+                   <img src={notSmileLogo} id="harold_serious" alt="harold serious" width="20%" height="20%"  />
+                   </div>
 
 
-        <button id="checkBtn" onClick={this.showHaroldSerious.bind(null,true)}>Check</button>
-        <button onClick={this.showHaroldSerious.bind(null,false)}>HideCheck</button>
-        <button onClick={this.showHaroldSmile.bind(null,true)}>Check again</button>
-        <button onClick={this.showHaroldSmile.bind(null,false)}>HideCheckagain</button>
-
-
-        {this.state.showHaroldSerious}
-
-        {this.state.showHaroldSmile}
+        {/* <button onClick={this.showHaroldSerious.bind(null,true)} hidden={!this.state.topText + !this.state.bottomText}>Check</button>
+        <button onClick={this.showHaroldSerious.bind(null,false)} hidden={!this.state.topText + !this.state.bottomText} >HideCheck</button>
+        <button onClick={this.showHaroldSmile.bind(null,true)} hidden={!this.state.topText + !this.state.bottomText}>Check again</button>
+        <button onClick={this.showHaroldSmile.bind(null,false)} hidden={!this.state.topText + !this.state.bottomText} >HideCheckagain</button> */}
 
 
 
-
-        {
+        {/* {
            this.state.showHaroldSerious ? <img src={smileLogo} id="harold_smile" alt="harold smiles" width="20%" height="20%" style={{display: 'block'}}  /> :
 
            <img src={notSmileLogo} id="harold_serious" alt="harold serious" width="20%" height="20%" style={{display: 'none'}} />
@@ -198,7 +152,7 @@ class MemeGenerator extends Component {
             this.state.showHaroldSmile ? <img src={notSmileLogo} id="harold_serious" alt="harold serious" width="20%" height="20%" style={{display: 'block'}}/> :
 
             <img src={smileLogo} id="harold_smile" alt="harold smiles" width="20%" height="20%" style={{display: 'none'}}/>
-        }
+        } */}
 
 
 
