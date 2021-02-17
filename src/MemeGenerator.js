@@ -15,7 +15,8 @@ class MemeGenerator extends Component {
             showHaroldSerious: false,
             showHaroldSmile: false,
             seeHarReact: "Create the meme and see Harold's reaction",
-            memeStinks: " Your meme is foul"
+            memeStinks: " Your meme is foul",
+            tryTit: ""
 
 
 
