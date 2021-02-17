@@ -121,6 +121,7 @@ class MemeGenerator extends Component {
                     <h2 className="bottom">{this.state.bottomText}</h2>
                 </div>
 
+
                    <p>
                 { isFunny ?  this.state.memeStinks  :  this.state.seeHarReact }
 
