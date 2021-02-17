@@ -132,6 +132,7 @@ class MemeGenerator extends Component {
                    <div id="seriousHarold" hidden={!this.state.topText + !this.state.bottomText}>
                    <img src={notSmileLogo} id="harold_serious" alt="harold serious" width="20%" height="20%"  />
                    </div>
+                   <p> para</p>
 
 
         {/* <button onClick={this.showHaroldSerious.bind(null,true)} hidden={!this.state.topText + !this.state.bottomText}>Check</button>
