@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import smileLogo from './haroldSmile.jpg';
+import smileLogo from './haroldsmileprop.jpg';
 import notSmileLogo from './haroldNotFunny.jpg';
 
 
@@ -15,8 +15,8 @@ class MemeGenerator extends Component {
             showHaroldSerious: false,
             showHaroldSmile: false,
             seeHarReact: "Create the meme and see Harold's reaction",
-            memeStinks: " Your meme is foul",
-            tryTit: ""
+            memeEval: " Here's what Harold thinks:",
+
 
 
 
@@ -124,16 +124,16 @@ class MemeGenerator extends Component {
 
 
                    <p>
-                { isFunny ?  this.state.memeStinks  :  this.state.seeHarReact }
+                { isFunny ?  this.state.memeEval  :  this.state.seeHarReact }
 
                   </p>
                   <div id="smileHarold" hidden={this.state.bottomText} >
-                   <img src={smileLogo} id="harold_smile" alt="harold smiles" width="20%" height="20%" />
+                   <img src={smileLogo} id="harold_smile" alt="harold smiles" />
                    </div>
                    <div id="seriousHarold" hidden={!this.state.topText + !this.state.bottomText}>
-                   <img src={notSmileLogo} id="harold_serious" alt="harold serious" width="20%" height="20%"  />
+                   <img src={notSmileLogo} id="harold_serious" alt="harold serious" />
                    </div>
-                   <p> para rara</p>
+
 
 
         {/* <button onClick={this.showHaroldSerious.bind(null,true)} hidden={!this.state.topText + !this.state.bottomText}>Check</button>
