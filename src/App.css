@@ -151,9 +151,11 @@ text-align: cen
 }
 
 #harold_serious {
-margin-left: 10px;
-    border-radius: 50%;
+
+    margin-left: 10px;
+    border-radius: 40%;
     width: 12vw;
+    height: 13vw;
     padding: 10px;
     margin-top: -10px;
 
@@ -163,7 +165,7 @@ margin-left: 10px;
 #harold_smile {
 
    margin-left: 23px;
-    border-radius: 50%;
+    border-radius: 40%;
     width: 20vw;
     padding: 10px;
 
