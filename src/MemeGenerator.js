@@ -14,8 +14,9 @@ class MemeGenerator extends Component {
             funnyText: "Hi, type something to check Harold's reaction",
             showHaroldSerious: false,
             showHaroldSmile: false,
-            seeHarReact: "Create the meme and see Harold's reaction",
+            seeHarReact: "Type the meme and see Harold's instant reaction",
             memeEval: " Here's what Harold thinks:",
+            notSmileLogo: "true"
 
 
 
@@ -29,22 +30,22 @@ class MemeGenerator extends Component {
 
     }
 
-    // showHaroldSerious = (bool) => {
+    showHaroldSerious = (bool) => {
 
-    //     this.setState({
-    //       showHaroldSerious: bool
-    //     });
+        this.setState({
+          showHaroldSerious: bool
+        });
 
 
-    //   }
+      }
 
-    //   showHaroldSmile = (bool) => {
+      showHaroldSmile = (bool) => {
 
-    //     this.setState({
-    //       showHaroldSmile: bool
-    //     });
+        this.setState({
+          showHaroldSmile: bool
+        });
 
-    //   }
+      }
 
     // checkMe = () => {
 
@@ -121,41 +122,40 @@ class MemeGenerator extends Component {
                     <h2 className="top">{this.state.topText}</h2>
                     <h2 className="bottom">{this.state.bottomText}</h2>
                 </div>
-
-
-                   <p>
+                <p>
                 { isFunny ?  this.state.memeEval  :  this.state.seeHarReact }
-
-                  </p>
+                </p>
                   <div id="smileHarold" hidden={this.state.bottomText} >
                    <img src={smileLogo} id="harold_smile" alt="harold smiles" />
                    </div>
+
                    <div id="seriousHarold" hidden={!this.state.topText + !this.state.bottomText}>
                    <img src={notSmileLogo} id="harold_serious" alt="harold serious" />
+
+                   </div>
+                    <div>
+                   <button onClick={this.showHaroldSerious.bind(null,true)} hidden={!this.state.topText + !this.state.bottomText}>Check again, maybe he misunderstood</button>
                    </div>
 
+{
 
 
-        {/* <button onClick={this.showHaroldSerious.bind(null,true)} hidden={!this.state.topText + !this.state.bottomText}>Check</button>
-        <button onClick={this.showHaroldSerious.bind(null,false)} hidden={!this.state.topText + !this.state.bottomText} >HideCheck</button>
-        <button onClick={this.showHaroldSmile.bind(null,true)} hidden={!this.state.topText + !this.state.bottomText}>Check again</button>
-        <button onClick={this.showHaroldSmile.bind(null,false)} hidden={!this.state.topText + !this.state.bottomText} >HideCheckagain</button> */}
+              this.state.showHaroldSerious ? "Sorry, he's hard to please"  : ""
+
+
+}
+
+
+{
+
+
+this.state.showHaroldSerious ? <button onClick={this.showHaroldSerious.bind(null,false)} hidden={!this.state.topText + !this.state.bottomText}>Hide this  from me</button>  : ""
+
+
+}
 
 
 
-        {/* {
-           this.state.showHaroldSerious ? <img src={smileLogo} id="harold_smile" alt="harold smiles" width="20%" height="20%" style={{display: 'block'}}  /> :
-
-           <img src={notSmileLogo} id="harold_serious" alt="harold serious" width="20%" height="20%" style={{display: 'none'}} />
-
-       }
-
-
-         {
-            this.state.showHaroldSmile ? <img src={notSmileLogo} id="harold_serious" alt="harold serious" width="20%" height="20%" style={{display: 'block'}}/> :
-
-            <img src={smileLogo} id="harold_smile" alt="harold smiles" width="20%" height="20%" style={{display: 'none'}}/>
-        } */}
 
 
 
