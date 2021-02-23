@@ -1,18 +1,14 @@
-
-import './App.css';
-import Header from './Header.js';
-import MemeGenerator from './MemeGenerator.js';
-// import Logo from './haroldsmile.jpg';
+import "./App.css";
+import Header from "./Header.js";
+import MemeGenerator from "./MemeGenerator.js";
 
 function App() {
   return (
-
     <div className="App">
       <header className="App-header">
         <Header />
         <MemeGenerator />
       </header>
-       {/* <Logo /> */}
     </div>
   );
 }

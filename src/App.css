@@ -2,12 +2,6 @@
   text-align: center;
 }
 
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-} */
-
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -19,21 +13,23 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-
 header {
   height: 100px;
   display: flex;
   align-items: center;
-  background: #6441A5;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2a0845, #6441A5);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #766088, #080311); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #fa0511; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff2222,
+    #6e821e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff2222,
+    #6e821e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 8px;
 }
-
 
 header > img {
   height: 90%;
@@ -45,9 +41,7 @@ header > p {
   color: whitesmoke;
   font-size: 30px;
   margin-left: 60px;
-
 }
-
 
 .meme {
   position: relative;
@@ -56,10 +50,8 @@ header > p {
 }
 
 .meme > img {
-
   width: 40vw;
   height: 30vh;
-
 }
 
 .meme > h2 {
@@ -75,16 +67,9 @@ header > p {
   text-transform: uppercase;
   color: white;
   letter-spacing: 1px;
-  text-shadow:
-      2px 2px 0 #000,
-      -2px -2px 0 #000,
-      2px -2px 0 #000,
-      -2px 2px 0 #000,
-      0 2px 0 #000,
-      2px 0 0 #000,
-      0 -2px 0 #000,
-      -2px 0 0 #000,
-      2px 2px 5px #000;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
+    2px 2px 5px #000;
 }
 
 .meme > .bottom {
@@ -114,60 +99,65 @@ header > p {
   font-size: 25px;
   letter-spacing: 1.5px;
   color: white;
-  background: #6441A5;
+  background: #ff0047;
   border-radius: 8px;
 }
-.evBtn {
-
+#checkAgain {
   border: none;
   font-family: VT323, monospace;
-  font-size: 30px;
+  font-size: 15px;
   letter-spacing: 1.5px;
   color: white;
-  background: #6441A5;
+  background: #ff0047;
   border-radius: 10px;
-
 }
 
-.meme-form > input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-font-family: VT323, monospace;
-font-size: 25px;
-text-align: cen
+#hideTruth {
+  border: none;
+  font-family: VT323, monospace;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  color: white;
+  background: #ff0047;
+  border-radius: 10px;
 }
-.meme-form > input::-moz-placeholder { /* Firefox 19+ */
-font-family: VT323, monospace;
-font-size: 25px;
-text-align: cen
+
+.meme-form > input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-family: VT323, monospace;
+  font-size: 20px;
+  text-align: cen;
 }
-.meme-form > input:-ms-input-placeholder { /* IE 10+ */
-font-family: VT323, monospace;
-font-size: 25px;
-text-align: cen
+.meme-form > input::-moz-placeholder {
+  /* Firefox 19+ */
+  font-family: VT323, monospace;
+  font-size: 20px;
+  text-align: cen;
 }
-.meme-form > input:-moz-placeholder { /* Firefox 18- */
-font-family: VT323, monospace;
-font-size: 25px;
-text-align: cen
+.meme-form > input:-ms-input-placeholder {
+  /* IE 10+ */
+  font-family: VT323, monospace;
+  font-size: 20px;
+  text-align: cen;
+}
+.meme-form > input:-moz-placeholder {
+  /* Firefox 18- */
+  font-family: VT323, monospace;
+  font-size: 20px;
+  text-align: cen;
 }
 
 #harold_serious {
-
-    margin-left: 10px;
-    border-radius: 40%;
-    width: 12vw;
-    height: 13vw;
-    padding: 10px;
-    margin-top: -10px;
-
+  margin-left: 10px;
+  margin-top: -10px;
+  border-radius: 40%;
+  width: 12vw;
+  height: 10vw;
 }
-
 
 #harold_smile {
-
-   margin-left: 23px;
-    border-radius: 40%;
-    width: 20vw;
-    padding: 10px;
-
+  margin-left: 2px;
+  border-radius: 40%;
+  width: 15vw;
+  padding: 10px;
 }
-
