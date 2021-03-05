@@ -16,6 +16,8 @@ class MemeGenerator extends Component {
       seeHarReact: "Type the meme and see Harold's instant reaction",
       memeEval: " Here's what Harold thinks:",
       notSmileLogo: "true",
+      hideTruth: "Sorry, he's hard to please",
+      checkAgain: "Check again, maybe he misunderstood"
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -56,6 +58,8 @@ class MemeGenerator extends Component {
       bottomText: "",
       topText: "",
       funnyText: "",
+      hideTruth: false,
+      checkAgain: "I think you got the point"
     });
   }
 
@@ -105,7 +109,7 @@ class MemeGenerator extends Component {
             onClick={this.showHaroldSerious.bind(null, true)}
             hidden={!this.state.topText + !this.state.bottomText}
           >
-            Check again, maybe he misunderstood
+             {this.state.checkAgain}
           </button>
         </div>
 
@@ -115,7 +119,7 @@ class MemeGenerator extends Component {
             onClick={this.showHaroldSerious.bind(null, false)}
             hidden={!this.state.topText + !this.state.bottomText}
           >
-            Sorry, he's hard to please
+           {this.state.hideTruth}
           </button>
         ) : (
           ""
